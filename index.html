@@ -5,14 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products Table</title>
     <style>
-        main>table{
-            border: 1px solid rgb(167, 165, 165);
-            width: 500px;
-            height: 200p;
+        main{
+            display: flex;
+            justify-content: center;
         }
-        main>table *{
-            border: 1px solid rgb(187, 186, 186);
+        table{
+            width: 90%;
+            border-collapse: collapse;
         }
+        table>thead{
+            background-color: rgb(9, 153, 9);
+        }
+        td,th{
+            border: solid rgb(226, 225, 225);
+            padding: 10px;
+            text-align: left;
+            border-block-width: 1px;
+            border-inline-width: 2px;
+        }
+        th{
+            border-color: rgb(44, 138, 57);
+        }
+        table>tfoot{
+            background-color: rgb(231, 231, 231);
+        }
+        .total-price,tfoot{
+            font-weight: 600;
+        }
+        
     </style>
 </head>
 <body>
@@ -24,28 +44,28 @@
                     <th>Quantity</th>
                     <th>Price Per Unit</th>
                     <th>Description</th>
-                    <th>Total Price</th>
+                    <th class="total-price">Total Price</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="column">
                     <td>Product 1</td>
                     <td>2</td>
-                    <td>10</td>
+                    <td>&dollar;10</td>
                     <td>This is product 1</td>
-                    <td>20</td>
+                    <td class="total-price">&dollar;20</td>
                 </tr>
-                <tr>
+                <tr class="column">
                     <td>Product 2</td>
                     <td>3</td>
-                    <td>20</td>
+                    <td>&dollar;20</td>
                     <td>This is product 2</td>
-                    <td>60</td>
+                    <td class="total-price">&dollar;60</td>
                 </tr>
                 <tfoot>
-                    <tr>
+                    <tr class="column">
                         <td colspan="4">Sum</td>
-                        <td>80</td>
+                        <td>&dollar;80</td>
                     </tr>
                 </tfoot>
             </tbody>
